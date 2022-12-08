@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Your Resumes
+{% endblock %}
+
+{% block content %}
+<h1> Your Resumes:</h1>
+<br>
+    {% for resume in resumes %}
+<a href="{% url 'view_resume_url' resume.resume_name %}"> View {{ resume.resume_name }}</a>
+<a href="{% url 'download_resume_url' resume.resume_name %}"> Download {{ resume.resume_name }} </a>
+<br><br><br>
+        {% endfor %}
+<br><br><br>
+<a href="{% url 'home' %}"> Back to Home </a>
+{% endblock %}

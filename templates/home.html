@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <p>Hello world and hello, {{ user.username }}!</p>
+  <p><a href="{% url 'resume_list_url' %}">Your Resumes</a></p>
+  <p><a href="{% url 'create_resume_url' %}">Create Resume</a></p>
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+  <p>Log in please -_-</p>
+  <p><a href="{% url 'login' %}">Log In</a></p>
+  <p><a href="{% url 'signup' %}">Sign Up</a></p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Your Resume
+{% endblock %}
+
+{% block content %}
+<h1>{{ resume.name }} {{ resume.surname }} ({{ resume.age }} y.o.)</h1>
+<br>
+{{ resume.phone }} | {{ resume.email }}
+<br><br><br>
+<b>About Education:</b>
+{{ resume.about_education }}
+<br>
+<br>
+<b>About Work Expirience:</b>
+{{ resume.about_work_expirience }}
+<br>
+<br>
+<b>About Me:</b>
+{{ resume.about_me }}
+<br><br><br>
+<a href="{% url 'home' %}"> Back to Home </a>
+{% endblock %}
